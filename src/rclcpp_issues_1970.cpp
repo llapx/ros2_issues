@@ -16,7 +16,7 @@ public:
     TestParams(const rclcpp::NodeOptions &options = rclcpp::NodeOptions())
         : Node("this_node", options)
     {
-#if 1
+#if 0
         auto declare_parameters_results = this->declare_parameters(
             "hello",
             {

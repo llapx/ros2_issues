@@ -8,6 +8,7 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(std_srvs REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(action_tutorials_interfaces REQUIRED)
 
@@ -25,15 +26,15 @@ function(add_exec target)
     "rcutils"
     "rclcpp_action"
     "action_tutorials_interfaces"
+    "std_srvs"
     "std_msgs")
 
   install(TARGETS ${target}
     DESTINATION lib/${PROJECT_NAME})
 endfunction()
 
-#add_exec(rclcpp_1960)
-add_exec(rclcpp_issues_1970)
-#add_exec(params_event)
+add_exec(server)
+add_exec(client)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
